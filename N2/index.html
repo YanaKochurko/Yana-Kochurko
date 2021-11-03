@@ -15,11 +15,13 @@
 
         function change_array(array) {
             for (let i = 0; i < count; i++) {
-                alert(array[i] + 1);
+                array[i]++;
             }
+            return array;
         }
 
-        change_array(array); 
+        let newArray = change_array(array);
+
     </script>
 </body>
 
