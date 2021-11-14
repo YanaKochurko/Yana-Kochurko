@@ -11,9 +11,8 @@
     <script>
       let userInput = prompt("Введите строку");
 
-      function getVowels(input) {
+      function getVowels(input, vowels = "аеёиоуыэюя") {
         return () => {
-          const vowels = "аеёиоуыэюя";
           return input
             .toLowerCase()
             .split("")
