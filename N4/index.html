@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
+      let userInput = prompt("Введите строку");
 
-        let stroka = prompt("Введите строку");
-        function vowels(stroka) {
-            var massivIzStroki = stroka.toLowerCase().split('');
-            var glasnye = "аеёиоуыэюя";
+      function getVowels(input) {
+        return () => {
+          const vowels = "аеёиоуыэюя";
+          return input
+            .toLowerCase()
+            .split("")
+            .filter((letter) => vowels.indexOf(letter) !== -1);
+        };
+      }
+      var result = getVowels(userInput)();
 
-            var fnk = massivIzStroki.reduce((sum, element) => {
-                if (glasnye.indexOf(element) !== -1) {
-                    console.log(element);
-                    sum++;
-                }
-                return sum;
-            }, 0);
-            return fnk;
-        }
-        var rezault = vowels(stroka);
-        alert("Количество гласных: " + rezault);
+      console.log(result);
+      console.log("Количество гласных: " + result.length);
     </script>
-</body>
-
+  </body>
 </html>
