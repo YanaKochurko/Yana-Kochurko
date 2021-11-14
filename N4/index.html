@@ -10,16 +10,24 @@
 
 <body>
     <script>
-        const userInput = prompt("Ваедите строку");
-        const vowels = "аеёиоуыэюя";
 
-        const letters = userInput
-            .toLowerCase()
-            .split('')
-            .filter(letter => vowels.indexOf(letter) !== -1);
-            
-        console.log(letters);
-        console.log(letters.length);
+        let stroka = prompt("Введите строку");
+        function vowels(stroka) {
+            var massivIzStroki = stroka.toLowerCase().split('');
+            var glasnye = "аеёиоуыэюя";
+
+            var fnk = massivIzStroki.reduce((sum, element) => {
+                if (glasnye.indexOf(element) !== -1) {
+                    console.log(element);
+                    sum++;
+                }
+                return sum;
+            }, 0);
+            return fnk;
+        }
+        var rezault = vowels(stroka);
+        alert("Количество гласных: " + rezault);
     </script>
 </body>
+
 </html>
