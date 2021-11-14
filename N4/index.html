@@ -8,23 +8,23 @@
 </head>
 <body>
     <script>
-let array = [
-  { name: "Ivan", salary: 1000 },
-  { name: "Anton", salary: 2000 },
-  { name: "Yana", salary: 7000 },
-  { name: "Gena", salary: 15000 },
-  { name: "Sasha", salary: 300 },
-  { name: "Yulia", salary: 50 },
-];
+        
+let stroka = prompt("Введите строку");
+function vowels (stroka) {
+   var massivIzStroki=stroka.toLowerCase().split(''); 
+   var glasnye="аеёиоуыэюя";
 
-const SumSalary = arr =>
-arr.reduce((sum,{salary}) => sum + salary,0)
-
-const total = SumSalary(array)
-alert(total);
-
+   var fnk = massivIzStroki.reduce( (sum, element) => {
+      if (glasnye.indexOf (element) !==-1) { 
+          console.log(element);
+         sum++; 
+      }
+      return sum; 
+   }, 0); 
+   return fnk;
+}
+var rezault=vowels(stroka) ;
+alert ("Количество гласных: "+rezault);
     </script>
-
-
 </body>
 </html>
