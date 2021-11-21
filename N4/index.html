@@ -10,19 +10,20 @@
   <body>
     <script>
       let userInput = prompt("Введите строку");
+      let vowels = ["а","е","ё","и","о","у","ы","э","ю","я"];
 
-      function getVowels(input, vowels = "аеёиоуыэюя") {
-        return () => {
-          return input
-            .toLowerCase()
-            .split("")
-            .filter((letter) => vowels.indexOf(letter) !== -1);
-        };
-      }
-      var result = getVowels(userInput)();
-
-      console.log(result);
-      console.log("Количество гласных: " + result.length);
+      const getCount = (string) =>{
+        return (vowel) => {
+          if (typeof string !== "string"){
+            return "Введите верную строку";
+          }
+          const array = string.toLowerCase().split("");
+        const count = array.reduce((sum,item)=> sum+ vowels.includes(item),0);
+      return count;
+            };
+      };
+      
+      console.log(getCount(userInput)());
     </script>
   </body>
 </html>
