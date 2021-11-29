@@ -1,37 +1,26 @@
+const animals = [
+    { name: "Cat", color: "White", age: "3", voice: 'Meow' },
+    { name: "Dog", color: "Brown", age: "4", voice: 'Woof' }, 
+    { name: "Cow", color: "Black", age: "5", voice: 'Moo' }
+   ];
 
 class Animal {
-  constructor(_name, _age, _voice) {
-    this.name=_name;
-    this.age=_age;
-    this.voice=_voice;
-    this.show=function(){
-        alert(this.name + "  " + this.age + "  " + this.voice + "  ");
-    }
+  constructor(name, color, age, voice) {
+     this.name = name;
+     this.color = color;
+     this.age = age;
+     this.voice = voice;
+  }
+
+  say() {
+    console.log (`${this.name} is ${this.age} years old and says ${this.voice}`);
   }
 }
 
-var Cow = new Animal("Cow","10","Moo");
-var Dog = new Animal("Dog","5","Gav");
-var Cat = new Animal("Cat","1","Meow");
-
-Cow.show();
-Dog.show();
-Cat.show();
-
-function addCount(otherCount) {
-    let userInput = prompt("Для того,чтобы добавить лошадь нажмите 0, чтобы Ворону - нажмите 1");
- if (userInput === "0" ){
-    var Horse = new Animal("Horse","7","Brr")
-    Horse.show()}
- else {var Vorona = new Animal("Vorona","2","Car")
-    Vorona.show() };
- }
+const animalsFabric = (arr) => arr.map((item) => new Animal(item.name, item.color, item.age, item.voice));
 
 
-addCount();
-
-
-
-
-
+animalsFabric(animals).forEach(animal => {
+  animal.say();
+});
 
